@@ -12,7 +12,7 @@
 #include <linux/if.h> /* for ioctl number */
 #include <pci/pci.h> /* for pci calls */
 
-#include "DWC_ETH_QOS_ycommon.h" /* for local data structure */
+#include "dwcqos_common.h" /* for local data structure */
 
 #define TX_DATA_BUF_SIZE_PER_DESC 1518
 #define TOTAL_TX_DATA_BUF_SIZE (TX_DATA_BUF_SIZE_PER_DESC * TX_DESC_CNT)

@@ -16,7 +16,7 @@
 #include <sys/user.h>
 #include <time.h>
 
-#include "DWC_ETH_QOS_ycommon.h"
+#include "dwcqos_common.h"
 
 /* IOCTL's */
 #define DWC_ETH_QOS_BIND		_IOW('E', 200, int)

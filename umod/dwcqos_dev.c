@@ -1,5 +1,5 @@
-#include "DWC_ETH_QOS_yheader.h"
-#include "DWC_ETH_QOS_yregacc.h"
+#include "dwcqos.h"
+#include "dwcqos_reg.h"
 
 int get_tx_queue_count(void)
 {
