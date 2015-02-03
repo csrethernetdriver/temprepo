@@ -62,6 +62,10 @@ else
 CONFIG_UMODEDRV_OBJ=n
 endif
 
+ifeq ($(KERNELDIR),)
+	KERNELDIR=/lib/modules/$(shell uname -r)/build
+endif
+
 obj-m := DWC_ETH_QOS.o
 
 DWC_ETH_QOS-y += DWC_ETH_QOS_dev.o \
@@ -78,10 +82,10 @@ DWC_ETH_QOS-$(CONFIG_PTPSUPPORT_OBJ) += DWC_ETH_QOS_ptp.o
 DWC_ETH_QOS-$(CONFIG_UMODEDRV_OBJ) += DWC_ETH_QOS_avb.o
 
 all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+	make -C $(KERNELDIR) M=$(PWD) modules
 	gcc -g $(DWC_ETH_QOS_CONFIG_PGTEST) $(DWC_ETH_QOS_CONFIG_DEBUGFS) $(DWC_ETH_QOS_CONFIG_PTP) $(DWC_ETH_QOS_CONFIG_UMODEDRV)  $(DWC_ETH_QOS_CONFIG_TALKER) $(DWC_ETH_QOS_CONFIG_LISTENER) DWC_ETH_QOS_api.c -o DWC_ETH_QOS_api
 
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	make -C $(KERNELDIR) M=$(PWD) clean
 	rm -f DWC_ETH_QOS_api
 
