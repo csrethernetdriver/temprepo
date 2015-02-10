@@ -62,7 +62,7 @@
 
 #ifdef CONFIG_UMODEDRV_OBJ
 #define DWC_ETH_QOS_CONFIG_UMODEDRV
-#include "DWC_ETH_QOS_avb.h"
+#include "dwcqos_avb.h"
 #endif
 
 #ifdef CONFIG_PGTEST_OBJ

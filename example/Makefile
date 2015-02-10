@@ -3,7 +3,7 @@ CFLAGS=$(OPT) -Wall -W -Wno-parentheses
 
 CC=gcc
 INCFLAGS=-I../umod/
-LDLIBS=-lDWC_ETH_QOS_drv -lpci -lrt
+LDLIBS=-ldwcqos_drv -lpci -lrt
 LDFLAGS=-L../umod/
 
 all: listener_talker listener talker

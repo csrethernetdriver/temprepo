@@ -1,6 +1,6 @@
-#include "DWC_ETH_QOS_yheader.h"
-#include "DWC_ETH_QOS_yregacc.h"
-#include "DWC_ETH_QOS_dev.h"
+#include "dwcqos.h"
+#include "dwcqos_reg.h"
+#include "dwcqos_dev.h"
         
 /* global variables */
 unsigned long pci_base_addr = 0x0;
